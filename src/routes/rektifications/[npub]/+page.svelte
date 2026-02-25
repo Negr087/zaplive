@@ -1,26 +1,29 @@
 <script>
-    import { nostrPool, relayEvents } from "$lib/store";
-    import TimeAgo from 'javascript-time-ago'
+    import { nostrPool, relayEvents, profiles, nostrNotes } from "$lib/store";
+    import TimeAgo from 'javascript-time-ago';
     import en from 'javascript-time-ago/locale/en';
     import { onMount } from "svelte";
+    import "../../../app.css";
 
-    TimeAgo.addDefaultLocale(en)
+    import NavBar from "$lib/components/NavBar.svelte";
+    import Note from "$lib/components/Note.svelte";
+    import Zap from "$lib/components/Zap.svelte";
+    import Avatar from "$lib/components/Avatar.svelte";
 
-    // ⚠️ YA NO agregamos relays manualmente
+    TimeAgo.addDefaultLocale(en);
+
+    let pubkey = "";
+    let eventIds = [];
+    let events = {};
+    let openedZap = null;
+    let displayRelayInfo = false;
+    let relayUrls;
+
+    $: relayUrls = Object.keys($relayEvents).filter(url => url.match(/\/\//));
+
     onMount(() => {
         console.log("Nostr pool initialized");
     });
-
-    import "../../../app.css";
-
-    let displayRelayInfo = false;
-
-    let relayUrls;
-    $: relayUrls = Object.keys($relayEvents).filter(url => url.match(/\/\//));
-
-    // ⚠️ Si querés permitir agregar relays dinámicamente,
-    // necesitamos agregar un método nuevo en la clase.
-    // Por ahora lo desactivamos para que no rompa.
 
     function addNewRelay(e) {
         console.warn("Dynamic relay adding disabled with SimplePool version");
