@@ -11,7 +11,7 @@
 </script>
 
 <svelte:head>
-    <title>ZAPLIFE.LOL</title>
+    <title>ZAPLIVE</title>
 </svelte:head>
 
 <NavBar />

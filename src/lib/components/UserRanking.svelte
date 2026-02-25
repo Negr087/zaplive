@@ -2,7 +2,6 @@
     import { selectedDuration, totalsPerRecipient, totalsPerSender, totalsPerZapper } from '$lib/store';
     import UserRankingCard from '$lib/components/UserRankingCard.svelte';
     import { getSinceTime } from '$lib/nostr/utils';
-	import { CloseCurlyDoubleQuote } from 'markdown-it/lib/common/entities';
 
     export let sortMode;
     

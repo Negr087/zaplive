@@ -100,7 +100,7 @@
                     <a href='#' class="
                     " on:click|preventDefault={toggleTimeframes}>
                         {durationInHoursFormatted}
-                    </a> - zaplife.lol
+                    </a> - ZAPLIVE
                 </span>
             {:else}
                 <a href='#' class="
