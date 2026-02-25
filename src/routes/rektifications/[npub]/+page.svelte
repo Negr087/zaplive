@@ -11,7 +11,7 @@
         console.log("Nostr pool initialized");
     });
 
-    import "../app.css";
+    import "../../app.css";
 
     let displayRelayInfo = false;
 
